@@ -30,15 +30,17 @@
                 if(humanChoice==computerChoice){
                     console.log('Tie!')
                 }else if((humanChoice=='rock' && computerChoice=='scissor')||(humanChoice=='paper' && computerChoice=='rock')||(humanChoice=='scissor' && computerChoice=='paper')){
-                    console.log('Human Won!')
+                    return 'human'
                 }else{
-                    console.log('Computer Won!')
+                    return 'computer'
                 }
-                
-                return 0;
             }
-            playRound(getHumanChoice(),getComputerChoice());
-            
+            let output=playRound(getHumanChoice(),getComputerChoice());
+            if(output=='human'){
+                humanscore++;
+            }else{
+                computerScore++;
+            }
            
         </script>
     </body>
