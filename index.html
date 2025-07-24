@@ -50,7 +50,13 @@
                         computerScore++;
                     }
                 }
-                
+                if(computerScore<humanScore){
+                    console.log("Human is the GRAND WINNER!")
+                }else if(computerScore>humanScore){
+                    console.log("Computer is the GRAND WINNER!")
+                }else{
+                    console.log("Tie!")
+                }
                 return 0;
             }
             playGame();
