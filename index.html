@@ -7,6 +7,20 @@
     <body>
         <script>
             console.log('Hello World!');
+            let n;
+            function getComputerChoice(){
+                let randomNum=Math.floor(Math.random()*3);
+                return randomNum+1;
+            }
+            n=getComputerChoice();
+            console.log(n);
+            if(n==1){
+                console.log('rock');
+            }else if(n==2){
+                console.log('paper');
+            }else{
+                console.log('scissor');
+            }
         </script>
     </body>
 </html>
