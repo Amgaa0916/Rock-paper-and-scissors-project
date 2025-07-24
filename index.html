@@ -5,10 +5,7 @@
         <title>Rock,Paper and Scissors</title>
     </head>
     <body>
-        <script>
-            let tie=0;
-            let humanScore=0;
-            let computerScore=0;
+        <script>     
             function getComputerChoice(){
                 let randomNum=Math.floor(Math.random()*3)+1;
                 if(randomNum==1){
@@ -20,9 +17,11 @@
                     return "scissor";
                 }
             }
+
             function getHumanChoice(){
                 let value=prompt("What is your input?");
                 return value;
+
             }
             function playRound(humanChoice, computerChoice){
                 humanChoice=humanChoice.toLowerCase();
@@ -30,7 +29,6 @@
                 console.log("Computer output is: "+computerChoice);
                 if(humanChoice==computerChoice){
                     console.log('Tie!')
-                    return 'tie';
                 }else if((humanChoice=='rock' && computerChoice=='scissor')||(humanChoice=='paper' && computerChoice=='rock')||(humanChoice=='scissor' && computerChoice=='paper')){
                     console.log("Human won!");
                     return 'human';
@@ -41,23 +39,18 @@
                 }
             }
            
-           
-            
             function playGame(){
-                
+                let humanScore=0;
+                let computerScore=0;
                 for(i=1;i<=5;i++){
                     let output=playRound(getHumanChoice(),getComputerChoice());
                     if(output=='human'){
                         humanScore++;
                     }else if(output=='computer'){
                         computerScore++;
-                    }else{
-                        tie++;
                     }
                 }
-                console.log("Human total score: "+humanScore);
-                console.log("Computer total score: "+computerScore);
-                console.log("Total tie: "+tie);
+                
                 return 0;
             }
             playGame();
