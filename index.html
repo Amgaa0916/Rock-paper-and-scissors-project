@@ -6,6 +6,8 @@
     </head>
     <body>
         <script>
+            let humanScore=0;
+            let computerScore=0;
             function getComputerChoice(){
                 let randomNum=Math.floor(Math.random()*3)+1;
                 if(randomNum==1){
@@ -18,11 +20,24 @@
                 }
             }
             function getHumanChoice(){
-                let value=prompt("What is your input? \nrock=1, paper=2, scissor=3");
+                let value=prompt("What is your input?");
                 return value;
             }
-            console.log(getComputerChoice());
-            console.log(getHumanChoice());
+            function playRound(humanChoice, computerChoice){
+                humanChoice=humanChoice.toLowerCase();
+                console.log("User input is: "+humanChoice);
+                console.log("Computer output is: "+computerChoice);
+                if(humanChoice==computerChoice){
+                    console.log('Tie!')
+                }else if((humanChoice=='rock' && computerChoice=='scissor')||(humanChoice=='paper' && computerChoice=='rock')||(humanChoice=='scissor' && computerChoice=='paper')){
+                    console.log('Human Won!')
+                }else{
+                    console.log('Computer Won!')
+                }
+                
+                return 0;
+            }
+            playRound(getHumanChoice(),getComputerChoice());
             
            
         </script>
