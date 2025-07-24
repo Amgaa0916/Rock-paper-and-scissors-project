@@ -6,21 +6,20 @@
     </head>
     <body>
         <script>
-            console.log('Hello World!');
-            let n;
             function getComputerChoice(){
-                let randomNum=Math.floor(Math.random()*3);
-                return randomNum+1;
+                let randomNum=Math.floor(Math.random()*3)+1;
+                if(randomNum==1){
+                    return "rock";
+                }else if(randomNum==2){
+                    return "paper";
+                }else{
+
+                    return "scissor";
+                }
             }
-            n=getComputerChoice();
-            console.log(n);
-            if(n==1){
-                console.log('rock');
-            }else if(n==2){
-                console.log('paper');
-            }else{
-                console.log('scissor');
-            }
+            console.log(getComputerChoice());
+            
+           
         </script>
     </body>
 </html>
